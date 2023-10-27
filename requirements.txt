@@ -1,2 +1,4 @@
 Flask==3.0.0
-kivymd==1.1.1
+base64
+matplotlib
+urllib
