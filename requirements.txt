@@ -1,5 +1,4 @@
 Flask==3.0.0
-PIL
 pillow
 firebase_admin
 fpdf
