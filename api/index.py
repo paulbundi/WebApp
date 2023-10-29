@@ -35,7 +35,6 @@ def secretary2():
     qp = []
     nine3 = database.reference("REQUESTS").child("SHOP").get()
     barcode = database.reference("BARCODE").get()
-    print(nine3['pdfs'])
     
     if nine3 is not None and 'pdfs' in nine3:
         for keys, data in nine3['pdfs'].items():
