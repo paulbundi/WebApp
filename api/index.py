@@ -37,20 +37,21 @@ def secretary2():
     nine3 = database.reference("REQUESTS").child("SHOP").get()
     # barcode = database.reference("BARCODE").get()
     # print(nine3['pdfs'])
+    
     if nine3 is not None and 'pdfs' in nine3:
         for keys, data in nine3['pdfs'].items():
             qp = data[0]
-            sever_supreme(n=len(data[0]), b='many', p='many', e=data[1], k=keys, w='pdfs')
+            return sever_supreme(n=len(data[0]), b='many', p='many', e=data[1], k=keys, w='pdfs')
 
     if nine3 is not None and 'requests' in nine3:
         for keys, data in nine3['requests'].items():
             qp = []
-            sever_supreme(n=data[0], b='any', p='any', e=data[1], k=f"{keys}", w='requests')
+            return sever_supreme(n=data[0], b='any', p='any', e=data[1], k=f"{keys}", w='requests')
 
     if nine3 is not None and 'xuntian' in nine3:
         for keys, data in nine3['xuntian'].items():
             qp = []
-            sever_supreme(n=data[2], b=f"{data[1]}", p=data[0], e=data[3], k=f'{keys}', w='xuntian')
+            return sever_supreme(n=data[2], b=f"{data[1]}", p=data[0], e=data[3], k=f'{keys}', w='xuntian')
     return 'Success!'
     
 @app.route('/shh')
