@@ -1,2 +1,7 @@
 Flask==3.0.0
-matplotlib
+pillow
+firebase_admin
+fpdf
+pdf_mail
+pypng
+python-barcode
