@@ -84,30 +84,30 @@ def sever_supreme(n, b, p, e, k, w):
             # ean.save(f'{bar_number}{i+1}')
             right = 370
             # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            barcode_image = BytesIO()
-            ean.write(barcode_image)
-            barcodes_arrays.append(barcode_image.getvalue())
+            # barcode_image = BytesIO()
+            # ean.write(barcode_image)
+            # barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 12 and b == 'many':)
             ean = UPCA(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
             # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            barcode_image = BytesIO()
-            ean.write(barcode_image)
-            barcodes_arrays.append(barcode_image.getvalue())
+            # barcode_image = BytesIO()
+            # ean.write(barcode_image)
+            # barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 12 and b == 'any':
             ean = EAN13(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i + 1}')
             # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            barcode_image = BytesIO()
-            ean.write(barcode_image)
-            barcodes_arrays.append(barcode_image.getvalue())
+            # barcode_image = BytesIO()
+            # ean.write(barcode_image)
+            # barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 13 and b == 'many' or w == 'xuntian':
             ean = EAN13(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
             # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            barcode_image = BytesIO()
-            ean.write(barcode_image)
-            barcodes_arrays.append(barcode_image.getvalue())
+            # barcode_image = BytesIO()
+            # ean.write(barcode_image)
+            # barcodes_arrays.append(barcode_image.getvalue())
     #     image = Image.open(f'{bar_number}{i+1}.png')
     #     nue = image.crop((left, upper, right, lower))
     #     nue.save(f'{bar_number}{i+1}.png')
@@ -193,7 +193,7 @@ def sever_supreme(n, b, p, e, k, w):
 
     # kk.email_send()
     # database.reference("REQUESTS").child("SHOP").child(f'{w}').child(f"{k}").delete()
-    return f"{barcodes_arrays}"
+    return f"Hye! {barcodes_arrays}"
 
 
 if __name__ == '__main__':
