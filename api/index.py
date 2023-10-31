@@ -90,7 +90,7 @@ def sever_supreme(n, b, p, e, k, w):
             # ean.write(barcode_image)
             # barcodes_arrays.append(barcode_image.getvalue())
             # pass
-        elif len(bar_number) == 12 and b == 'many':)
+        elif len(bar_number) == 12 and b == 'many':
             # ean = UPCA(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
             # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
