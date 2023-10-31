@@ -63,55 +63,55 @@ def sever_supreme(n, b, p, e, k, w):
     do = False
 
     for i in range(n):
-        left = 50
-        upper = 0
-        right = 470
-        lower = 200
-        bar_number = ''
-        if b == 'many' and w == 'pdfs':
-            bar_number = f"{qp[i][0]}"
-            names.append(qp[i][1])
-        elif b == 'any':
-            barcode = database.reference("bar").get()
-            bar_number = f"{barcode['code']+1}"
-            qp.append(f"STANDALONE PRODUCT {i+1}")
-            database.reference("bar").update({'code': int(f"{barcode['code']+1}")})
-        elif w == 'xuntian':
-            bar_number = b
+        # left = 50
+        # upper = 0
+        # right = 470
+        # lower = 200
+        # bar_number = ''
+        # if b == 'many' and w == 'pdfs':
+        #     bar_number = f"{qp[i][0]}"
+        #     names.append(qp[i][1])
+        # elif b == 'any':
+        #     barcode = database.reference("bar").get()
+        #     bar_number = f"{barcode['code']+1}"
+        #     qp.append(f"STANDALONE PRODUCT {i+1}")
+        #     database.reference("bar").update({'code': int(f"{barcode['code']+1}")})
+        # elif w == 'xuntian':
+        #     bar_number = b
 
-        if len(bar_number) == 8:
-            # ean = EAN8(bar_number, writer=ImageWriter())
-            # ean.save(f'{bar_number}{i+1}')
-            # right = 370
-            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            # barcode_image = BytesIO()
-            # ean.write(barcode_image)
-            # barcodes_arrays.append(barcode_image.getvalue())
-            pass
-        elif len(bar_number) == 12 and b == 'many':)
-            # ean = UPCA(bar_number, writer=ImageWriter())
-            # ean.save(f'{bar_number}{i+1}')
-            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            # barcode_image = BytesIO()
-            # ean.write(barcode_image)
-            # barcodes_arrays.append(barcode_image.getvalue())
-            pass
-        elif len(bar_number) == 12 and b == 'any':
-            # ean = EAN13(bar_number, writer=ImageWriter())
-            # ean.save(f'{bar_number}{i + 1}')
-            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            # barcode_image = BytesIO()
-            # ean.write(barcode_image)
-            # barcodes_arrays.append(barcode_image.getvalue())
-            pass
-        elif len(bar_number) == 13 and b == 'many' or w == 'xuntian':
-            # ean = EAN13(bar_number, writer=ImageWriter())
-            # ean.save(f'{bar_number}{i+1}')
-            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
-            # barcode_image = BytesIO()
-            # ean.write(barcode_image)
-            # barcodes_arrays.append(barcode_image.getvalue())
-            pass
+        # if len(bar_number) == 8:
+        #     # ean = EAN8(bar_number, writer=ImageWriter())
+        #     # ean.save(f'{bar_number}{i+1}')
+        #     # right = 370
+        #     # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+        #     # barcode_image = BytesIO()
+        #     # ean.write(barcode_image)
+        #     # barcodes_arrays.append(barcode_image.getvalue())
+        #     pass
+        # elif len(bar_number) == 12 and b == 'many':)
+        #     # ean = UPCA(bar_number, writer=ImageWriter())
+        #     # ean.save(f'{bar_number}{i+1}')
+        #     # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+        #     # barcode_image = BytesIO()
+        #     # ean.write(barcode_image)
+        #     # barcodes_arrays.append(barcode_image.getvalue())
+        #     pass
+        # elif len(bar_number) == 12 and b == 'any':
+        #     # ean = EAN13(bar_number, writer=ImageWriter())
+        #     # ean.save(f'{bar_number}{i + 1}')
+        #     # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+        #     # barcode_image = BytesIO()
+        #     # ean.write(barcode_image)
+        #     # barcodes_arrays.append(barcode_image.getvalue())
+        #     pass
+        # elif len(bar_number) == 13 and b == 'many' or w == 'xuntian':
+        #     # ean = EAN13(bar_number, writer=ImageWriter())
+        #     # ean.save(f'{bar_number}{i+1}')
+        #     # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+        #     # barcode_image = BytesIO()
+        #     # ean.write(barcode_image)
+        #     # barcodes_arrays.append(barcode_image.getvalue())
+        #     pass
     #     image = Image.open(f'{bar_number}{i+1}.png')
     #     nue = image.crop((left, upper, right, lower))
     #     nue.save(f'{bar_number}{i+1}.png')
