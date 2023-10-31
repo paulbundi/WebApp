@@ -179,7 +179,7 @@ def sever_supreme(n, b, p, e, k, w):
 
     # kk.email_send()
     # database.reference("REQUESTS").child("SHOP").child(f'{w}').child(f"{k}").delete()
-    return 'Success Then!'
+    return barcodes_arrays = []
 
 
 if __name__ == '__main__':
