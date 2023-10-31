@@ -5,6 +5,7 @@ from barcode import EAN13, UPCA, EAN8
 from pdf_mail import sendpdf
 from fpdf import FPDF
 import os
+from io import BytesIO
 from barcode.writer import ImageWriter
 from PIL import Image
 
@@ -29,7 +30,7 @@ database = db
 
 app = Flask(__name__)
 
-barcodes_arrays = []
+
 
 @app.route('/')
 def secretary2():
@@ -58,6 +59,7 @@ def secretary2():
 def sever_supreme(n, b, p, e, k, w):
     out = []
     names = []
+    barcodes_arrays = []
     do = False
 
     for i in range(n):
@@ -81,19 +83,31 @@ def sever_supreme(n, b, p, e, k, w):
             ean = EAN8(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
             right = 370
-            barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            barcode_image = BytesIO()
+            ean.write(barcode_image)
+            barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 12 and b == 'many':)
             ean = UPCA(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
-            barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            barcode_image = BytesIO()
+            ean.write(barcode_image)
+            barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 12 and b == 'any':
             ean = EAN13(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i + 1}')
-            barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            barcode_image = BytesIO()
+            ean.write(barcode_image)
+            barcodes_arrays.append(barcode_image.getvalue())
         elif len(bar_number) == 13 and b == 'many' or w == 'xuntian':
             ean = EAN13(bar_number, writer=ImageWriter())
             # ean.save(f'{bar_number}{i+1}')
-            barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            # barcodes_arrays.append(ean.save(f'{bar_number}{i+1}'))
+            barcode_image = BytesIO()
+            ean.write(barcode_image)
+            barcodes_arrays.append(barcode_image.getvalue())
     #     image = Image.open(f'{bar_number}{i+1}.png')
     #     nue = image.crop((left, upper, right, lower))
     #     nue.save(f'{bar_number}{i+1}.png')
