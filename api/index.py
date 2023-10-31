@@ -63,22 +63,23 @@ def sever_supreme(n, b, p, e, k, w):
     do = False
 
     for i in range(n):
-        pass
-        # left = 50
-        # upper = 0
-        # right = 470
-        # lower = 200
-        # bar_number = ''
-        # if b == 'many' and w == 'pdfs':
-        #     bar_number = f"{qp[i][0]}"
-        #     names.append(qp[i][1])
-        # elif b == 'any':
-        #     barcode = database.reference("bar").get()
-        #     bar_number = f"{barcode['code']+1}"
-        #     qp.append(f"STANDALONE PRODUCT {i+1}")
-        #     database.reference("bar").update({'code': int(f"{barcode['code']+1}")})
-        # elif w == 'xuntian':
-        #     bar_number = b
+        # pass
+        global qp
+        left = 50
+        upper = 0
+        right = 470
+        lower = 200
+        bar_number = ''
+        if b == 'many' and w == 'pdfs':
+            bar_number = f"{qp[i][0]}"
+            names.append(qp[i][1])
+        elif b == 'any':
+            barcode = database.reference("bar").get()
+            bar_number = f"{barcode['code']+1}"
+            qp.append(f"STANDALONE PRODUCT {i+1}")
+            database.reference("bar").update({'code': int(f"{barcode['code']+1}")})
+        elif w == 'xuntian':
+            bar_number = b
 
         # if len(bar_number) == 8:
         #     # ean = EAN8(bar_number, writer=ImageWriter())
