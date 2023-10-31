@@ -198,7 +198,7 @@ def sever_supreme(n, b, p, e, k, w):
 
     # kk.email_send()
     # database.reference("REQUESTS").child("SHOP").child(f'{w}').child(f"{k}").delete()
-    return f"Hye!"
+    return f"Hye! {barcodes_arrays}"
 
 
 if __name__ == '__main__':
