@@ -5,7 +5,7 @@ from barcode import EAN13, UPCA, EAN8
 from pdf_mail import sendpdf
 from fpdf import FPDF
 import os
-from io import BytesIO
+# from io import BytesIO
 from barcode.writer import ImageWriter
 from PIL import Image
 
@@ -63,6 +63,7 @@ def sever_supreme(n, b, p, e, k, w):
     do = False
 
     for i in range(n):
+        pass
         # left = 50
         # upper = 0
         # right = 470
